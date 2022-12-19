@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Muster Cloud</title>
+        <script type = "module" src="../main.js"></script>
+        
+    </head>
+<body>
+    <h1>H</h1>
+
+    <div id="subirArchivos_btns">
+        <h3>Subir Archivos</h3>
+        <label>Cargar Usuarios: <input type="file" id="subirUsuarios_btn" value="Cargar Usuarios"></label><br>
+        <label>Cargar Artistas: <input type="file" id="subirArtistas_btn" value="Cargar Artistas"></label><br>
+        <label>Cargar Canciones: <input type="file" id="subirCanciones_btn" value="Cargar Canciones"></label><br>
+        <label>Cargar Podcast: <input type="file" id="subirPodcasts_btn" value="Cargar Podcast"></label><br>
+        <label>Cargar Musica Programada: <input type="file" id="subirPrograma_btn" value="Cargar Musica Programada"></label>
+
+    </div>
+    <div id="graficas_btns">
+        <h3>Graficas</h3>
+        <button id="graficaUsuarios_btn">Usuarios</button>
+        <button id="graficaArtistas_btn">Artistas y Canciones</button>
+        <button id="graficaPodcasts_btn">Podcasts</button>
+        <button id="graficaPrograma_btn">Musica Programada</button>
+
+        <div id="contenedorGraficas"></div>
+    </div>
+
+
+    <div id="graficas"></div>
+    <script type="module" src="../js/admin.js"></script>
+
+</body>
+</html>

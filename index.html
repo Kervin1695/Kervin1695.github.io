@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>
+    <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
+    <title>Muster Cloud</title>
+
+</head>
+
+<body>
+    <div id="vistaMain">
+        <h1>Bienvenido</h1>
+
+        <h2>Iniciar Sesión</h2><br>
+        <input type="text" id="usuario_login" placeholder="Nombre de usuario"><br>
+        <input type="password" id="password_login" placeholder="Contraseña"><br>
+        <label>
+            <input type="checkbox" id="admin_login">
+            Administrador
+        </label><br>
+        <button id="btn_login">Iniciar Sesion</button><br>
+
+
+        <h2>Registrarse</h2>
+        <input type="text" id="usuario_registro" placeholder="Nombre de usuario"><br>
+        <input type="text" id="nombre_registro" placeholder="Nombre Completo"><br>
+        <input type="text" id="DPI_registro" placeholder="DPI"><br>
+        <input type="text" id="telefono_registro" placeholder="Telefono"><br>
+        <input type="password" id="password_registro" placeholder="Contraseña"><br>
+        <button id="btn_registro">Registrarse</button>
+
+        <script type="module" src="./js/main.js"></script>
+        <script type="module" src="https://kervin1695.github.io/EDD_Proyecto1_201908384/js/main.js"></script>
+    </div>
+
+    <div id="vistaAdmin">
+        <button id="logout_btn">Cerrar Sesion</button>
+        <h1>Administrador</h1>
+
+        <div id="subirArchivos_btns">
+            <h3>Subir Archivos</h3>
+            <label>Cargar Usuarios: <input type="file" id="subirUsuarios_btn" value="Cargar Usuarios"></label><br>
+            <label>Cargar Artistas: <input type="file" id="subirArtistas_btn" value="Cargar Artistas"></label><br>
+            <label>Cargar Canciones: <input type="file" id="subirCanciones_btn" value="Cargar Canciones"></label><br>
+            <label>Cargar Podcast: <input type="file" id="subirPodcasts_btn" value="Cargar Podcast"></label><br>
+            <label>Cargar Musica Programada: <input type="file" id="subirPrograma_btn"
+                    value="Cargar Musica Programada"></label>
+
+        </div>
+        <div id="graficas_btns">
+            <h3>Graficas</h3>
+            <button id="graficaUsuarios_btn">Usuarios</button>
+            <button id="graficaArtistas_btn">Artistas y Canciones</button>
+            <button id="graficaPodcasts_btn">Podcasts</button>
+            <button id="graficaPrograma_btn">Musica Programada</button>
+
+            <div id="contenedorGraficas"></div>
+        </div>
+
+
+        <div id="graficas"></div>
+        <script type="module" src="../js/admin.js"></script>
+        <script type="module" src="https://kervin1695.github.io/EDD_Proyecto1_201908384/js/admin.js"></script>
+    </div>
+
+    <div id="vistaUser">
+        <h1>Usuario</h1>
+        <button id="logout_btn_user">Cerrar Sesion</button>
+        <div id="opcionesUser">
+            <h3>Opciones</h3>
+            <button id="verPlaylist_btn_user">Abrir Playlist</button><br>
+            <button id="verAmigos_btn_user">Abrir Amigos</button><br>
+            <button id="verOpcionesMusica_btn_user">Opciones Musica</button><br>
+        </div>
+        <div id="graficas_btns_user">
+            <h3>Graficas</h3>            
+            <button id="graficarUsuarios_btn_user">Usuarios</button>
+            <button id="graficarArtistas_btn_user">Artistas y Canciones</button>
+            <button id="graficarPodcasts_btn_user">Podcasts</button>
+            <button id="graficarPrograma_btn_user">Musica Programada</button>
+            <div id="contenedorGraficas_user"></div>
+        </div>
+        <div id="vistaArtistas">
+            <button id="ordenarAscendente_btn_user">Ordenar A-Z</button>
+            <button id="ordenarDescendente_btn_user">Ordenar Z-A</button>
+            <div id="contenedorGraficaArtistas_user"></div>
+        </div>
+        <script type="module" src="../js/user.js"></script>
+    </div>
+
+    <div id="playlist">
+        <h2>Playlist</h2>
+        <button id="volverAmigos_btn_playlist">Regresar</button>
+        <div id="miPlaylist">
+            <div id="imagenPlaylist"></div><br>
+            <div id="funcionalidadPlaylist">
+                <button id="playlistAnterior_btn">Anterior</button>
+                <label id="nombrePlaylist_label"></label>
+                <button id="playlistSiguiente_btn">Siguiente</button>
+            </div><br>
+
+            <div id="agregarCancionPlaylist">
+                <input type="text" id="nombreArtistaPlaylist_input" placeholder="Nombre del Artista"><br>
+                <input type="text" id="nombreCancionPlaylist_input" placeholder="Nombre de la Cancion"><br>
+                <button id="agregarCancionPlaylist_btn">Agregar Cancion</button>
+            </div>
+        </div>
+        <script type="module" src="../js/playlist.js"></script>
+    </div>
+
+    <div id="amigos">
+        <h2>Amigos</h2>
+        <button id="volverAmigos_btn_amigos">Regresar</button>
+        <div id="usuariosAmigos">
+            <button id="verUsuarios_btn_amigos">Ver Usuarios</button>
+            <div id="contenedorUsuarios_amigos" style="width: 30%;"></div>
+        </div>
+        <div id="misAmigos">
+            <button id="graficarAmigos_btn_amigos">Ver Amigos</button>
+            <h3>Administrar Amigos</h3>
+            <input id="nombreAmigo_input" type="text" placeholder="Nombre de Usuario"><br>
+            <button id="agregarAmigo_btn">Agregar Amigo</button><br>
+            <button id="bloquearAmigo_btn">Bloquear Amigo</button>
+            <div id="contenedorGraficas_amigos"></div>
+        </div>
+
+        <div id="bloqueados">
+            <button id="graficarBloqueados_btn_amigos">Ver Bloqueados</button>
+            <h3>Amigos Bloqueados</h3>
+            <button id="desbloquearAmigo_btn">Desbloquear Amigo</button><br>
+            <div id="contenedorBloqueados_amigos"></div>
+        </div>
+        
+        <script type="module" src="../js/amigos.js"></script>
+        
+    </div>
+
+    <div id="opcionesMusica">
+        <button id="volverOpciones_btn_opciones">Regresar</button>
+        <h2>Opciones Musica</h2>
+        <div id="publicarCanciones">
+            <input type="text" id="nombreCancion_btn_opciones" placeholder="Nombre de la Cancion"><br>
+            <button id="publicarCancion_btn_opciones">Publicar Cancion</button>
+            <div id="graficarArtistas_opciones"></div>
+        </div>
+
+        <div id="programarMusica">
+            <input type="text" id="nombreCancionProgramada_btn_opciones" placeholder="Nombre de la Cancion"><br>
+            <input type="text" id="nombreArtistaProgramada_btn_opciones" placeholder="Nombre del Artista"><br>
+            <input type="text" id="mesProgramada_btn_opciones" placeholder="Mes"><br>
+            <input type="text" id="diaProgramada_btn_opciones" placeholder="Dia"><br>
+            <button id="programarCancion_btn_opciones">Programar Cancion</button>
+            <div id="graficarPrograma_opciones"></div>
+        </div>
+
+        <div id="publicarPodcasts">
+            <input type="text" id="nombrePodcast_btn_opciones" placeholder="Nombre del Podcast"><br>
+            <input type="text" id="temaPodcast_btn_opciones" placeholder="Tema"><br>
+            <input type="text" id="duracionPodcast_btn_opciones" placeholder="Duracion"><br>
+            <input type="text" id="invitadoPodcast_btn_opciones" placeholder="Invitado"><br>
+            
+            <button id="publicarPodcast_btn_opciones">Publicar Podcast</button>
+            <div id="graficaPodcast_opciones"></div>
+        </div>
+        <script type="module" src="../js/opcionesMusica.js"></script>
+    </div>
+
+</body>
+
+</html>

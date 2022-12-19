@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>   
+    <script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
+    <title>Usuario</title>
+</head>
+<body>
+    <h1>Usuario</h1>
+    <div id="graficas_btns">
+        <h3>Graficas</h3>
+        <button id="graficaUsuarios_btn">Usuarios</button>
+        <button id="graficaArtistas_btn">Artistas</button>
+        <button id="graficaCanciones_btn">Canciones</button>
+        <button id="graficaPodcasts_btn">Podcasts</button>
+        <div id="contenedorGraficas"></div>
+    </div>
+    <div id="graficas"></div>
+    <script type="module" src="../js/user.js"></script>
+    
+</body>
+</html>
